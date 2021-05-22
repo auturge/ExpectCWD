@@ -11,13 +11,6 @@
 
 <br>
 
->
-> [![Work In Progress][WIP-badge]](#top)
->
-> This project is an @auturge Work-in-Progress.
-
-<br>
-
 ## Getting Started ##
 
 @auturge/expect-cwd is available as source code from [GitHub][github-url], or as a package on [npm][npm-url].
@@ -84,5 +77,3 @@ Distributed under the MIT license. See [`LICENSE`][license] for more information
 [travis-url]: https://travis-ci.com/github/auturge/expect-cwd
 [coveralls-image]: https://coveralls.io/repos/github/auturge/expect-cwd/badge.svg?branch=master
 [coveralls-url]: https://coveralls.io/github/auturge/expect-cwd?branch=master
-
-[WIP-badge]: https://img.shields.io/static/v1?label=WIP:&message=Work-in-Progress&color=blueviolet
