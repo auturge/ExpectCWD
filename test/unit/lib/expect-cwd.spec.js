@@ -103,24 +103,26 @@ describe('expect-cwd', () => {
 
     it('expect-cwd - throws when the specified folder does not exist', () => {
         const folder = `doesn't matter!`;
+        const target = __dirname + "A folder which must not exist";
         cwd.returns(directory1);
-        join.returns(__dirname + "A folder which must not exist");
+        join.returns(target);
 
         assert.throws(() => {
             expectCwd(folder, failure);
-        }, 'The specified directory does not exist.');
+        }, `The specified directory does not exist: [${ target }]`);
 
         sinon.assert.notCalled(failure);
     });
 
     it('expect-cwd - throws when the specified folder is not a valid path', () => {
         const folder = `doesn't matter!`;
+        const target = "!invalidPath (because of !)";
         cwd.returns(directory1);
-        join.returns("!invalidPath (because of !)");
+        join.returns(target);
 
         assert.throws(() => {
             expectCwd(folder, failure);
-        }, 'The specified directory is not a valid path.');
+        }, `The specified directory is not a valid path: [${ target }]`);
 
         sinon.assert.notCalled(failure);
     });

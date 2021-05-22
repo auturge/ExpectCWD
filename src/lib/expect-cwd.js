@@ -14,12 +14,12 @@ function expectCwd(folder, failure) {
         throw new Error('The failure argument must be a function.');
 
     const cwd = process.cwd();
-    const target = path.join(__dirname, folder);
+    const target = path.join(process.env.INIT_CWD, folder);
 
     if (!isValidPath(target))
-        throw new Error('The specified directory is not a valid path.');
+        throw new Error(`The specified directory is not a valid path: [${ target }]`);
     if (!fs.existsSync(target)) {
-        throw new Error('The specified directory does not exist.');
+        throw new Error(`The specified directory does not exist: [${ target }]`);
     }
 
     if (cwd != target) {
